@@ -1,0 +1,38 @@
+# CLIProxyAPI Configuration for Factory Droid
+# https://github.com/router-for-me/CLIProxyAPI
+
+# Server port
+port: 8317
+
+# Management API settings
+remote-management:
+  allow-remote: false
+  secret-key: ""
+
+# Authentication directory (stores OAuth tokens)
+auth-dir: "~/.cli-proxy-api"
+
+# Logging configuration
+debug: false
+logging-to-file: false
+
+# Usage statistics
+usage-statistics-enabled: true
+
+# Network proxy (if needed for corporate networks)
+proxy-url: ""
+
+# Retry configuration
+request-retry: 3
+
+# Quota management
+quota-exceeded:
+  switch-project: true
+  switch-preview-model: true
+
+# Disable request authentication (Factory handles its own)
+auth:
+  providers: []
+
+# No API keys needed for OAuth
+generative-language-api-key: []
