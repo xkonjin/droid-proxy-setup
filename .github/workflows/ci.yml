@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate YAML config
+        run: |
+          pip install pyyaml
+          python -c "import yaml; yaml.safe_load(open('config.yaml'))" && echo "config.yaml is valid"
+      - name: Validate JSON config
+        run: |
+          python -c "import json; json.load(open('factory-config.json'))" && echo "factory-config.json is valid"
